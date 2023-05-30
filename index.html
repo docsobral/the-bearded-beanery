@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>THE BEARDED BEANERY</title>
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="transformText">THE BEARDED BEANERY</h1>
+
+      <nav>
+        <menu>
+          <li><a href="#experience">About us</a></li>
+          <li><a href="#products">What we offer</a></li>
+          <li><a href="#team">The crew</a></li>
+        </menu>
+      </nav>
+    </header>
+
+    <main>
+      <article id="experience">
+        <h1>The <span>coffee</span> experience, the <span>right</span> way</h1>
+        <h2>We offer a space designed by and for trendy youth</h2>
+        <button>Our menu</button>
+      </article>
+
+      <article id="products">
+        <section>
+          <img src="./img/lounge.jpg" alt="Lounge area">
+          <h3>Lounge</h3>
+        </section>
+
+        <section>
+          <img src="./img/bar.jpg" alt="Bar area">
+          <h3>Bar</h3>
+        </section>
+
+        <section>
+          <img src="./img/greenhouse.jpg" alt="Greenhouse area">
+          <h3>Greenhouse</h3>
+        </section>
+      </article>
+
+      <article id="team">
+        <section>
+          <img src="./img/oliver.jpg" alt="Jeb">
+          <h3>Oliver</h3>
+        </section>
+
+        <section>
+          <img src="./img/willow.jpg" alt="Ronda">
+          <h3>Willow</h3>
+        </section>
+
+        <section>
+          <img src="./img/pablo.jpg" alt="Jon">
+          <h3>Pablo</h3>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <h4>copyright <span class="transformText">The Bearded Beanery</span></h4>
+    </footer>
+
+    <script>
+      function wrapCharactersInSpan(element) {
+      const text = element.textContent;
+      element.textContent = '';
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const span = document.createElement('span');
+        span.textContent = char;
+        element.appendChild(span);
+      }
+
+      const spans = element.querySelectorAll('span');
+      spans.forEach(span => {const parent = span.parentElement;
+        span.style.transition = 'color 0.3s ease-in-out, text-shadow 0.3s ease-in-out';
+        span.addEventListener('mouseover', () => {
+          span.style.color = '#EDEDED';
+          if (element.parentElement.tagName === 'H4') {
+            span.style.textShadow =
+              '2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000';
+          }
+        });
+        span.addEventListener('mouseout', () => {
+          span.style.color = '';
+          span.style.textShadow = '';
+        });
+      });
+    }
+
+    const elements = document.querySelectorAll('.transformText');
+    elements.forEach(element => wrapCharactersInSpan(element));
+
+    </script>
+  </body>
+</html>

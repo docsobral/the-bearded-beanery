@@ -1,0 +1,175 @@
+:root {
+  --mainFont: 'Major Mono Display', monospace;
+  --primaryFontColor: black;
+  --primaryColor: #EDEDED;
+  --secondaryColor: #C3C3C3;
+  --titleColor: goldenrod;
+  --rootFontSize: 20px;
+  --transitionSpeed: 100ms;
+  --textBorder:
+    2px 0 #000,
+    -2px 0 #000,
+    0 2px #000,
+    0 -2px #000,
+    1px 1px #000,
+    -1px -1px #000,
+    1px -1px #000,
+    -1px 1px #000;
+}
+
+html, body {
+  font-size: var(--rootFontSize);
+  font-family: var(--mainFont);
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+header {
+  padding-top: 1rem;
+  background-color: var(--primaryColor);
+}
+
+header h1 {
+  color: var(--titleColor);
+  text-shadow: var(--textBorder);
+}
+
+menu {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+menu > * {
+  flex-grow: 1;
+}
+
+a {
+  display: block;
+  padding: 1em 0.5em;
+  color: var(--primaryFontColor);
+  text-decoration: none;
+  transition-duration: var(--transitionSpeed);
+}
+
+a:hover {
+  background-color: var(--secondaryColor);
+  color: var(--titleColor);
+  text-shadow: var(--textBorder);
+  font-weight: bold;
+  transition-duration: var(--transitionSpeed);
+}
+
+#experience {
+  background-image: url('./img/hero.jpg');
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
+  color: white;
+  text-shadow: var(--textBorder);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 1rem 0.5rem;
+}
+
+#experience {
+  min-height: 20rem;
+}
+
+#experience > :is(h1, h2) {
+  background-color: #EDEDED75;
+  width: fit-content;
+  padding: 0 1ch;
+  margin: 0 auto;
+}
+
+button {
+  width: fit-content;
+  margin-block-start: 0.5rem;
+  margin-inline: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  background-color: #EDEDED99;
+  font-weight: bold !important;
+  text-shadow: inherit;
+  color: var(--titleColor);
+  transition-duration: var(--transitionSpeed);
+}
+
+button:active {
+  background-color: #C3C3C3;
+  text-shadow: none;
+  color: black;
+  transition-duration: var(--transitionSpeed);
+}
+
+h1 span {
+  color: var(--titleColor);
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+section {
+  transition-duration: var(--transitionSpeed);
+}
+
+section:hover {
+  background-color: var(--secondaryColor);
+  text-shadow: var(--textBorder);
+  color: var(--titleColor);
+  transition-duration: var(--transitionSpeed);
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+h1, h2, h3, h4 {
+  cursor: default;
+}
+
+@media only screen and (max-width: 420px) {
+  menu {
+    flex-direction: column;
+  }
+
+  a {
+    padding: 0.5rem;
+  }
+
+  #experience h1 {
+    padding: 0 !important;
+  }
+
+  h4 {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (min-width: 520px) {
+  #products, #team {
+    display: flex;
+    width: 100%;
+  }
+
+  :is(#products, #team, menu) > * {
+    flex-basis: 100%;
+  }
+}
+
+@media only screen and (min-height: 1300px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
