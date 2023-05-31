@@ -90,7 +90,7 @@ button {
   padding: 0.5rem 1rem;
   border-radius: 30px;
   background-color: #EDEDED99;
-  font-weight: bold !important;
+  font-weight: bold;
   text-shadow: inherit;
   color: var(--titleColor);
   transition-duration: var(--transitionSpeed);
