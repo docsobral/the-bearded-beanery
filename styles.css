@@ -15,9 +15,7 @@
     -1px -1px #000,
     1px -1px #000,
     -1px 1px #000;
-}
 
-html, body {
   font-size: var(--rootFontSize);
   font-family: var(--mainFont);
   text-align: center;
