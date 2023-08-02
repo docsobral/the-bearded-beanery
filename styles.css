@@ -124,6 +124,7 @@ section {
 }
 
 section:hover {
+  cursor: pointer;
   background-color: var(--secondaryColor);
   text-shadow: var(--textBorder);
   color: var(--titleColor);
