@@ -84,7 +84,6 @@ a:hover {
 }
 
 button {
-  cursor: pointer;
   width: fit-content;
   margin-block-start: 0.5rem;
   margin-inline: auto;
@@ -95,6 +94,10 @@ button {
   text-shadow: inherit;
   color: var(--titleColor);
   transition-duration: var(--transitionSpeed);
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 button:active {
